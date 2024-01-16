@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Fotoblog</title>
+        <link rel="stylesheet" href=""/>
+    </head>
+    <body>
+        <h1>FotoBlog</h1>
+        {% block content %}{% endblock %}
+        {% if user.is_authenticated%}
+        <p>Vous êtes connecté en tant que {{ user }}.<a href="{%url 'logout'%}">Se déconnecter</a></p>
+        <p>Voulez-vous <a href="{% url 'password_change' %}">changer votre mot de passe ?</a></p>
+        {% endif %}
+        
+        
+
+    </body>
+</html>

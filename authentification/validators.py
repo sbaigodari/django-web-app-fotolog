@@ -19,9 +19,6 @@ class ContainsNumberValidator:
                 'Le mot de passe doit contenir un chiffre', code='password_no_number')
 
     def get_help_text(self):
-<<<<<<< HEAD
+
         return 'Votre mot de passe doit contenir au moins un chiffre.'
-=======
-        return 'Votre mot de passe doit contenir au moins un chiffre.'
- 
->>>>>>> 84dd2c9e021568883719c3e19802fbfe7e38a196
+

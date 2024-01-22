@@ -11,5 +11,5 @@
 {%if user.is_authenticated %}
 <p><a href="{% url 'logout' %}">Se déconnecter</a></p>
 {%endif%}
-<p>Vous n'est pas encore membre ?<a href="{% url 'sign-up' %}">Inscrivez-vous maintenant</a></p>
+<p>Vous n'est pas encore membre ?<a href="{% url 'sign_up' %}">Inscrivez-vous maintenant</a></p>
 {%endblock%}

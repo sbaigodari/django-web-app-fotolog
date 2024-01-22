@@ -14,7 +14,7 @@ def home(request):
     return render(request,'blog/home.html',{'photos':photos,'blogs':blogs})
 
 @login_required
-@permission_required('blog.add_photo',raise_exception=True)
+@permission_required('blog.add_photo')
 def photo_upload(request):
 
     form = forms.PhotoForm()
@@ -51,6 +51,7 @@ def photo_profil_upload(request):
     return render(request,'blog/photo_profil_upload.html',{'form':form})
 
 @login_required
+@permission_required(['blog.add_photo', 'blog.add_blog'])
 def blog_and_photo_upload(request):
 
     form_blog = forms.BlogForm()
@@ -83,6 +84,7 @@ def view_blog(request,blog_id):
     return render(request, 'blog/view_blog.html', {'blog': blog})
 
 @login_required
+@permission_required('blog.change_blog')
 def edit_blog(request,blog_id):
     blog = get_object_or_404(models.Blog,id=blog_id)
     edit_form = forms.BlogForm(instance=blog)
@@ -114,6 +116,7 @@ def edit_blog(request,blog_id):
 
 
 @login_required
+@permission_required('blog.add_photo')
 def create_multiple_photos(request):
 
     PhotoFormSet = formset_factory(forms.PhotoForm, extra=5)

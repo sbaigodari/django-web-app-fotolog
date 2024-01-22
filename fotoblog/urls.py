@@ -29,7 +29,7 @@ urlpatterns = [
     path('logout/',LogoutView.as_view(), name='logout'),
     path('change-password/',PasswordChangeView.as_view(template_name='authentification/password_change_form.html'),name='password_change'),
     path('change-password-done/', PasswordChangeDoneView.as_view(template_name='authentication/password_change_done.html'),name='password_change_done'),
-    path('sign-up/', authentification.views.signup_page, name='sign-up'),
+    path('sign-up/', authentification.views.signup_page, name='sign_up'),
     path('home/', blog.views.home, name='home'),
     path('photo/upload/', blog.views.photo_upload, name='photo_upload'),
     path('profile-photo/upload', authentification.views.upload_profil_photo, name='upload_profil_photo'),
